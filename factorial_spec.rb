@@ -10,7 +10,6 @@ class Factorial
 
   def sum_digits(num)
     digits = num.to_s.split('').to_a.map {|dig| dig.to_i}
-    
   end
 
 end
