@@ -8,6 +8,11 @@ class Factorial
     total
   end
 
+  def sum_digits(num)
+    digits = num.to_s.split('').to_a.map {|dig| dig.to_i}
+    
+  end
+
 end
 
 describe 'Factorial' do
@@ -20,6 +25,10 @@ describe 'Factorial' do
 it 'should return 120 if number is 5' do
     factorial.compute(5).should eq 120
     factorial.compute(4).should eq 24
+  end
+
+it 'should be able to calculate the sum of the factorial\'s digits' do
+    factorial.sum_digits.should eq true
   end
 
 
