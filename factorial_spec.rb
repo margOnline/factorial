@@ -1,21 +1,21 @@
 class Factorial
 
   def compute(n)
-    total = 1
-    if n > 1
-      total = n * compute(n-1)    
-    end
-    total
+    n == 1 ? n : n * compute(n-1)    
   end
 
   def sum_digits(num)
     sum = 0
-    digits = num.to_s.split('').to_a.map {|dig| dig.to_i}
-    digits.each {|dig| sum += dig }
+    num.to_s.chars.map {|dig| sum += dig.to_i} 
     sum
   end
 
 end
+
+# factorial=Factorial.new
+# result =  factorial.compute(100)
+
+# puts " sum of digits  = #{factorial.sum_digits(result)}"
 
 describe 'Factorial' do
   let(:factorial) { Factorial.new }
@@ -26,7 +26,7 @@ describe 'Factorial' do
 
 it 'should be able to calculate a number\'s factorial' do
     factorial.compute(5).should eq 120
-    factorial.compute(4).should eq 24
+    factorial.compute(3).should eq 6
   end
 
 it 'should be able to calculate the sum of the factorial\'s digits' do
